@@ -1,0 +1,11 @@
+E:\Projects\word-parser.git\trunk\TestForm\bin\Debug\TestForm.exe.config
+E:\Projects\word-parser.git\trunk\TestForm\bin\Debug\TestForm.exe
+E:\Projects\word-parser.git\trunk\TestForm\bin\Debug\TestForm.pdb
+E:\Projects\word-parser.git\trunk\TestForm\obj\Debug\TestForm.csprojResolveAssemblyReference.cache
+E:\Projects\word-parser.git\trunk\TestForm\obj\Debug\TestForm.Properties.Resources.resources
+E:\Projects\word-parser.git\trunk\TestForm\obj\Debug\TestForm.csproj.GenerateResource.Cache
+E:\Projects\word-parser.git\trunk\TestForm\obj\Debug\TestForm.exe
+E:\Projects\word-parser.git\trunk\TestForm\obj\Debug\TestForm.pdb
+E:\Projects\word-parser.git\trunk\TestForm\obj\Debug\TestForm.TestForm.resources
+E:\Projects\word-parser.git\trunk\TestForm\bin\Debug\WordParser.dll
+E:\Projects\word-parser.git\trunk\TestForm\bin\Debug\WordParser.pdb
