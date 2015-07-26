@@ -4,3 +4,9 @@ E:\Projects\word-parser.git\trunk\WordParser\obj\Debug\WordParser.csprojResolveA
 E:\Projects\word-parser.git\trunk\WordParser\obj\Debug\WordParser.dll
 E:\Projects\word-parser.git\trunk\WordParser\obj\Debug\WordParser.pdb
 E:\Projects\word-parser.git\trunk\WordParser\obj\Debug\WordParser.csproj.ResolveComReference.cache
+C:\Projects\word-parser.git\trunk\WordParser\bin\Debug\WordParser.dll
+C:\Projects\word-parser.git\trunk\WordParser\bin\Debug\WordParser.pdb
+C:\Projects\word-parser.git\trunk\WordParser\obj\Debug\WordParser.csprojResolveAssemblyReference.cache
+C:\Projects\word-parser.git\trunk\WordParser\obj\Debug\WordParser.csproj.ResolveComReference.cache
+C:\Projects\word-parser.git\trunk\WordParser\obj\Debug\WordParser.dll
+C:\Projects\word-parser.git\trunk\WordParser\obj\Debug\WordParser.pdb

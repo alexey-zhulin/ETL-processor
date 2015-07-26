@@ -6,24 +6,18 @@ using System.Threading.Tasks;
 using System.IO;
 using Word = Microsoft.Office.Interop.Word;
 
-namespace WordParser
+namespace WordTools
 {
     // Класс библиотеки парсера Word файла
-    public class ParserLib
+    public class WordParser
     {
         public String fileName;
         private ParserResult _parserResult;
         public ParserResult parserResult { get { return _parserResult; } }
-        private bool _hasErrors;
-        public bool hasErrors { get { return _hasErrors; } }
-        private String _errorInfo;
-        public String errorInfo { get { return _errorInfo; } }
 
-        public ParserLib()
+        public WordParser()
         {
             _parserResult = new ParserResult();
-            _hasErrors = false;
-            _errorInfo = "";
         }
 
         public void ParseFile()
@@ -42,12 +36,31 @@ namespace WordParser
                                            ref miss, ref miss, ref miss, ref miss,
                                            ref miss, ref miss, ref miss, ref miss,
                                            ref miss);
+            foreach (Word.Paragraph par in docs.Paragraphs) 
+            {
+                var range = par.Range;
+                _parserResult.Header = _parserResult.Header + range.Text;
+            }
+            // Соберем данные всех таблиц
             foreach (Word.Table tb in docs.Tables)
             {
-                // insert code here to get text from cells in first column
-                // and insert into datatable.
+                for (int row = 1; row <= tb.Rows.Count; row++)
+                {
+                    List<String> colList = new List<String>();
+                    for (int col = 1; col <= tb.Columns.Count; col++)
+                    {
+                        try
+                        {
+                            var cell = tb.Cell(row, col);
+                            colList.Add(cell.Range.Text);
+                        }
+                        catch
+                        {
+                        }
+                    }
+                    _parserResult.Table.Add(colList);
+                }
             }
-
             ((Word._Document)docs).Close();
             ((Word._Application)word).Quit();
         }
@@ -62,6 +75,7 @@ namespace WordParser
         public ParserResult()
         {
             Table = new List<List<string>>();
+            Header = "";
         }
     }
 }

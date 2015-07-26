@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using WordParser;
+using WordTools;
 
 namespace TestForm
 {
@@ -25,15 +25,18 @@ namespace TestForm
 
         private void buttonRun_Click(object sender, EventArgs e)
         {
-            ParserLib lib = new ParserLib();
+            WordParser lib = new WordParser();
             try
             {
-                lib.fileName = "E:\\Projects\\word-parser.git\\trunk\\Files for test\\opt-3.doc";
+                lib.fileName = textBoxFileName.Text;
+                Cursor.Current = Cursors.WaitCursor;
                 lib.ParseFile();
+                Cursor.Current = Cursors.Default;
+                MessageBox.Show("Parsing completed", "Parsing result", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             catch (Exception er)
             {
-                MessageBox.Show(er.Message, "Parsing error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(er.Message, "Parsing result", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
         }

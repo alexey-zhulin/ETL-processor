@@ -31,6 +31,7 @@
             this.buttonRun = new System.Windows.Forms.Button();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.buttonClose = new System.Windows.Forms.Button();
+            this.textBoxFileName = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // buttonRun
@@ -61,11 +62,20 @@
             this.buttonClose.UseVisualStyleBackColor = true;
             this.buttonClose.Click += new System.EventHandler(this.buttonClose_Click);
             // 
+            // textBoxFileName
+            // 
+            this.textBoxFileName.Location = new System.Drawing.Point(12, 12);
+            this.textBoxFileName.Name = "textBoxFileName";
+            this.textBoxFileName.Size = new System.Drawing.Size(545, 20);
+            this.textBoxFileName.TabIndex = 3;
+            this.textBoxFileName.Text = "C:\\Projects\\word-parser.git\\trunk\\Files for test\\opt-3.doc";
+            // 
             // TestForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(613, 274);
+            this.Controls.Add(this.textBoxFileName);
             this.Controls.Add(this.buttonClose);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.buttonRun);
@@ -82,6 +92,7 @@
         private System.Windows.Forms.Button buttonRun;
         private System.Windows.Forms.StatusStrip statusStrip1;
         private System.Windows.Forms.Button buttonClose;
+        private System.Windows.Forms.TextBox textBoxFileName;
     }
 }
 
