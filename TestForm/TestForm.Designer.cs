@@ -64,9 +64,11 @@
             // 
             // textBoxFileName
             // 
+            this.textBoxFileName.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.textBoxFileName.Location = new System.Drawing.Point(12, 12);
             this.textBoxFileName.Name = "textBoxFileName";
-            this.textBoxFileName.Size = new System.Drawing.Size(545, 20);
+            this.textBoxFileName.Size = new System.Drawing.Size(562, 20);
             this.textBoxFileName.TabIndex = 3;
             this.textBoxFileName.Text = "C:\\Projects\\word-parser.git\\trunk\\Files for test\\opt-3.doc";
             // 

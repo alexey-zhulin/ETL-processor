@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestForm", "..\TestForm\Tes
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DbSaver", "..\DbSaver\DbSaver.csproj", "{0FD82AF8-AF18-4A9F-9455-978C7E2E6CA5}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LogWriter", "..\LogWriter\LogWriter.csproj", "{B9369DC2-E86F-4727-A985-1CBAEE66A3BF}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{0FD82AF8-AF18-4A9F-9455-978C7E2E6CA5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0FD82AF8-AF18-4A9F-9455-978C7E2E6CA5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0FD82AF8-AF18-4A9F-9455-978C7E2E6CA5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B9369DC2-E86F-4727-A985-1CBAEE66A3BF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B9369DC2-E86F-4727-A985-1CBAEE66A3BF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B9369DC2-E86F-4727-A985-1CBAEE66A3BF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B9369DC2-E86F-4727-A985-1CBAEE66A3BF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

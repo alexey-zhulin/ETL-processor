@@ -1,0 +1,10 @@
+E:\Projects\word-parser.git\trunk\WordParser\LogWriter\bin\Debug\LogWriter.dll
+E:\Projects\word-parser.git\trunk\WordParser\LogWriter\bin\Debug\LogWriter.pdb
+E:\Projects\word-parser.git\trunk\WordParser\LogWriter\obj\Debug\LogWriter.csprojResolveAssemblyReference.cache
+E:\Projects\word-parser.git\trunk\WordParser\LogWriter\obj\Debug\LogWriter.dll
+E:\Projects\word-parser.git\trunk\WordParser\LogWriter\obj\Debug\LogWriter.pdb
+E:\Projects\word-parser.git\trunk\LogWriter\bin\Debug\LogWriter.dll
+E:\Projects\word-parser.git\trunk\LogWriter\bin\Debug\LogWriter.pdb
+E:\Projects\word-parser.git\trunk\LogWriter\obj\Debug\LogWriter.csprojResolveAssemblyReference.cache
+E:\Projects\word-parser.git\trunk\LogWriter\obj\Debug\LogWriter.dll
+E:\Projects\word-parser.git\trunk\LogWriter\obj\Debug\LogWriter.pdb
