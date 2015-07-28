@@ -22,3 +22,5 @@ C:\Projects\word-parser.git\trunk\TestForm\obj\Debug\TestForm.Properties.Resourc
 C:\Projects\word-parser.git\trunk\TestForm\obj\Debug\TestForm.csproj.GenerateResource.Cache
 E:\Projects\word-parser.git\trunk\TestForm\bin\Debug\LogWriter.dll
 E:\Projects\word-parser.git\trunk\TestForm\bin\Debug\LogWriter.pdb
+C:\Projects\word-parser.git\trunk\TestForm\bin\Debug\LogWriter.dll
+C:\Projects\word-parser.git\trunk\TestForm\bin\Debug\LogWriter.pdb

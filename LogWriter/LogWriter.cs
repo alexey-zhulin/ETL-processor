@@ -30,21 +30,22 @@ namespace LogWriterNameSpace
                     instance = new LogWriter();
                     logQueue = new Queue<Log>();
                 }
-                Configuration config = ConfigurationManager.OpenExeConfiguration(ConfigurationUserLevel.None);
+                // var section = ConfigurationManager.GetSection("logSettings") as NameValueCollection;
+                var section = ConfigurationManager.AppSettings;
                 // Параметры логирования
                 // 1. Директория с логами
-                logDir = ConfigurationManager.AppSettings.Get("logDir");
+                logDir = section.Get("logDir");
                 if (string.IsNullOrEmpty(logDir)) logDir = Directory.GetCurrentDirectory() + "\\";
                 if (!Directory.Exists(logDir)) Directory.CreateDirectory(logDir);
                 logDir = Path.GetFullPath(logDir) + "\\";
                 // 2. Суффикс файла лога с расширением
-                logFile = ConfigurationManager.AppSettings.Get("logFile");
+                logFile = section.Get("logFile");
                 if (string.IsNullOrEmpty(logFile)) logFile = "log.txt";
-                if (!int.TryParse(ConfigurationManager.AppSettings.Get("logFile"), out maxLogAge))
+                if (!int.TryParse(section.Get("logFile"), out maxLogAge))
                 {
                     maxLogAge = 0;
                 }
-                if (!int.TryParse(ConfigurationManager.AppSettings.Get("queueSize"), out queueSize))
+                if (!int.TryParse(section.Get("queueSize"), out queueSize))
                 {
                     queueSize = 0;
                 }
