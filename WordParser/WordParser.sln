@@ -5,7 +5,7 @@ VisualStudioVersion = 12.0.21005.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WordParser", "WordParser.csproj", "{2A5606B9-9A3C-49A4-941F-C25D49EE0217}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestForm", "..\TestForm\TestForm.csproj", "{62301AB2-6A2A-4794-A60A-13D60E039FF9}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MainForm", "..\MainForm\MainForm.csproj", "{62301AB2-6A2A-4794-A60A-13D60E039FF9}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DbSaver", "..\DbSaver\DbSaver.csproj", "{0FD82AF8-AF18-4A9F-9455-978C7E2E6CA5}"
 EndProject

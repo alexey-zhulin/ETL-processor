@@ -3,8 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Configuration;
-using System.Collections.Specialized;
+//using System.Configuration;
+//using System.Collections.Specialized;
 using System.IO;
 
 namespace LogWriterNameSpace
@@ -15,11 +15,25 @@ namespace LogWriterNameSpace
         private static Queue<Log> logQueue;
         private static string logDir;
         private static string logFile;
-        private static int maxLogAge;
-        private static int queueSize;
+        private static int maxLogAge=0;
+        private static int queueSize=0;
         private static DateTime LastFlushed = DateTime.Now;
 
         private LogWriter() { }
+
+        static string PathAddBackslash(string path)
+        {
+            string separator1 = Path.DirectorySeparatorChar.ToString();
+            string separator2 = Path.AltDirectorySeparatorChar.ToString();
+            path = path.Trim();
+            if (path.EndsWith(separator1) || path.EndsWith(separator2))
+                return path;
+
+            if (path.Contains(separator2))
+                return path + separator2;
+
+            return path + separator1;
+        }
         
         public static LogWriter Instance
         {
@@ -30,25 +44,13 @@ namespace LogWriterNameSpace
                     instance = new LogWriter();
                     logQueue = new Queue<Log>();
                 }
-                // var section = ConfigurationManager.GetSection("logSettings") as NameValueCollection;
-                var section = ConfigurationManager.AppSettings;
                 // Параметры логирования
                 // 1. Директория с логами
-                logDir = section.Get("logDir");
-                if (string.IsNullOrEmpty(logDir)) logDir = Directory.GetCurrentDirectory() + "\\";
+                if (string.IsNullOrEmpty(logDir)) logDir = Directory.GetCurrentDirectory();
                 if (!Directory.Exists(logDir)) Directory.CreateDirectory(logDir);
-                logDir = Path.GetFullPath(logDir) + "\\";
+                logDir = PathAddBackslash(Path.GetFullPath(logDir));
                 // 2. Суффикс файла лога с расширением
-                logFile = section.Get("logFile");
                 if (string.IsNullOrEmpty(logFile)) logFile = "log.txt";
-                if (!int.TryParse(section.Get("logFile"), out maxLogAge))
-                {
-                    maxLogAge = 0;
-                }
-                if (!int.TryParse(section.Get("queueSize"), out queueSize))
-                {
-                    queueSize = 0;
-                }
 
                 return instance;
             }

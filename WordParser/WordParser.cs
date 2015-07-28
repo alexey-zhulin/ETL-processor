@@ -14,20 +14,30 @@ namespace WordTools
     {
         public String fileName;
         private ParserResult _parserResult;
+        private LogWriter _logWriter;
         public ParserResult parserResult { get { return _parserResult; } }
 
         public WordParser()
         {
             _parserResult = new ParserResult();
+            // Создадим экземпляр для логирования
+            _logWriter = LogWriter.Instance;
         }
 
         public void ParseFile()
         {
+            _logWriter.WriteToLog("Start file processing (fileName = " + fileName + ")", LogType.Info);
             // Проверим на корректность имени файла
-            if (string.IsNullOrEmpty(fileName))
-                throw new ArgumentException("'fileName' cannot be null or empty.", "fileName");
-            if (!File.Exists(fileName))
-                throw new Exception("'" + fileName + "' does not exists");
+            if (string.IsNullOrEmpty(fileName)) 
+            {
+                //throw new ArgumentException("'fileName' cannot be null or empty.", "fileName");
+                _logWriter.WriteToLog("'fileName' cannot be null or empty.", LogType.Error);
+            }
+            if (!File.Exists(fileName)) 
+            {
+                //throw new Exception("'" + fileName + "' does not exists");
+                _logWriter.WriteToLog("'" + fileName + "' does not exists", LogType.Error);
+            }
             // Откроем файл в MS Word
             var word = new Word.Application();
             object miss = System.Reflection.Missing.Value;
@@ -42,8 +52,6 @@ namespace WordTools
                 var range = par.Range;
                 _parserResult.Header = _parserResult.Header + range.Text;
             }
-            // Создадим экземпляр для логирования
-            LogWriter logWriter = LogWriter.Instance;
             // Соберем данные всех таблиц
             foreach (Word.Table tb in docs.Tables)
             {
@@ -60,8 +68,8 @@ namespace WordTools
                         }
                         catch (Exception e)
                         {
-                            string errInfo = "fileName = " + fileName + "; row = " + row +  "; col = " + col + "; message: " + e.Message;
-                            logWriter.WriteToLog(errInfo, LogType.Error);
+                            string errInfo = "message: " + e.Message + " (row = " + row +  "; col = " + col + ")";
+                            _logWriter.WriteToLog(errInfo, LogType.Error);
                         }
                     }
                     _parserResult.Table.Add(colList);
