@@ -13,3 +13,15 @@ E:\Projects\word-parser.git\trunk\TestForm\obj\Debug\TestForm.pdb
 E:\Projects\word-parser.git\trunk\MainForm\bin\Debug\TestForm.exe.config
 E:\Projects\word-parser.git\trunk\MainForm\obj\Debug\TestForm.exe
 E:\Projects\word-parser.git\trunk\MainForm\obj\Debug\TestForm.pdb
+E:\Projects\word-parser.git\trunk\MainForm\bin\Debug\TestForm.exe
+E:\Projects\word-parser.git\trunk\MainForm\bin\Debug\TestForm.pdb
+E:\Projects\word-parser.git\trunk\MainForm\bin\Debug\LogWriter.dll
+E:\Projects\word-parser.git\trunk\MainForm\bin\Debug\WordParser.dll
+E:\Projects\word-parser.git\trunk\MainForm\bin\Debug\LogWriter.pdb
+E:\Projects\word-parser.git\trunk\MainForm\bin\Debug\WordParser.pdb
+E:\Projects\word-parser.git\trunk\MainForm\obj\Debug\MainForm.csprojResolveAssemblyReference.cache
+E:\Projects\word-parser.git\trunk\MainForm\obj\Debug\TestForm.MainForm.resources
+E:\Projects\word-parser.git\trunk\MainForm\obj\Debug\TestForm.Properties.Resources.resources
+E:\Projects\word-parser.git\trunk\MainForm\obj\Debug\MainForm.csproj.GenerateResource.Cache
+E:\Projects\word-parser.git\trunk\MainForm\bin\Debug\LogInterfaces.dll
+E:\Projects\word-parser.git\trunk\MainForm\bin\Debug\LogInterfaces.pdb

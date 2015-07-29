@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using WordTools;
 using System.IO;
 using LogWriterNameSpace;
+using CommonInterfaces;
 
 namespace TestForm
 {
@@ -18,7 +19,7 @@ namespace TestForm
         private bool processedWithErrors;
         private string errorMessage;
         private bool needToBreak;
-        List<String> filesToProcess;
+        private List<String> filesToProcess;
 
         public MainForm()
         {
@@ -70,10 +71,15 @@ namespace TestForm
         private void backgroundWorker1_DoWork(object sender, DoWorkEventArgs e)
         {
             LogWriter logWriter = LogWriter.Instance;
+            logWriter.SetLogDir("log");
+            logWriter.SetLogFileName("etl_log.txt");
+            logWriter.SetMaxLogAge(10); // Сбрасывать лог будем каждые 10с
+            logWriter.SetQueueSize(1000); // Или по достижению очереди 1000 записей
             try
             {
                 logWriter.WriteToLog("=== PROCESS STARTED ===", LogType.Info);
                 WordParser lib = new WordParser();
+                lib.SetLogWriter(logWriter);
                 int pos = 0;
                 foreach (string fileName in filesToProcess)
                 {

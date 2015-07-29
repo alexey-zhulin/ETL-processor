@@ -10,7 +10,7 @@ C:\Projects\word-parser.git\trunk\WordParser\obj\Debug\WordParser.csprojResolveA
 C:\Projects\word-parser.git\trunk\WordParser\obj\Debug\WordParser.csproj.ResolveComReference.cache
 C:\Projects\word-parser.git\trunk\WordParser\obj\Debug\WordParser.dll
 C:\Projects\word-parser.git\trunk\WordParser\obj\Debug\WordParser.pdb
-E:\Projects\word-parser.git\trunk\WordParser\bin\Debug\LogWriter.dll
-E:\Projects\word-parser.git\trunk\WordParser\bin\Debug\LogWriter.pdb
 C:\Projects\word-parser.git\trunk\WordParser\bin\Debug\LogWriter.dll
 C:\Projects\word-parser.git\trunk\WordParser\bin\Debug\LogWriter.pdb
+E:\Projects\word-parser.git\trunk\WordParser\bin\Debug\LogInterfaces.dll
+E:\Projects\word-parser.git\trunk\WordParser\bin\Debug\LogInterfaces.pdb

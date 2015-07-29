@@ -6,22 +6,23 @@ using System.Threading.Tasks;
 //using System.Configuration;
 //using System.Collections.Specialized;
 using System.IO;
+using CommonInterfaces;
 
 namespace LogWriterNameSpace
 {
-    public class LogWriter
+    public class LogWriter : ILogWriter
     {
-        private static LogWriter instance;
-        private static Queue<Log> logQueue;
-        private static string logDir;
-        private static string logFile;
-        private static int maxLogAge=0;
-        private static int queueSize=0;
-        private static DateTime LastFlushed = DateTime.Now;
+        private static LogWriter _instance;
+        private static Queue<Log> _logQueue;
+        private static string _logDir;
+        private static string _logFile;
+        private static int _maxLogAge = 0;
+        private static int _queueSize = 0;
+        private static DateTime _lastFlushed = DateTime.Now;
 
         private LogWriter() { }
 
-        static string PathAddBackslash(string path)
+        private static string PathAddBackslash(string path)
         {
             string separator1 = Path.DirectorySeparatorChar.ToString();
             string separator2 = Path.AltDirectorySeparatorChar.ToString();
@@ -34,36 +35,50 @@ namespace LogWriterNameSpace
 
             return path + separator1;
         }
-        
+
+
+        private static void InitLogDir()
+        {
+            if (string.IsNullOrEmpty(_logDir)) _logDir = Directory.GetCurrentDirectory();
+            if (!Directory.Exists(_logDir)) Directory.CreateDirectory(_logDir);
+            _logDir = PathAddBackslash(Path.GetFullPath(_logDir));
+        }
+
         public static LogWriter Instance
         {
             get
             {
-                if (instance == null)
+                if (_instance == null)
                 {
-                    instance = new LogWriter();
-                    logQueue = new Queue<Log>();
+                    _instance = new LogWriter();
+                    _logQueue = new Queue<Log>();
                 }
                 // Параметры логирования
                 // 1. Директория с логами
-                if (string.IsNullOrEmpty(logDir)) logDir = Directory.GetCurrentDirectory();
-                if (!Directory.Exists(logDir)) Directory.CreateDirectory(logDir);
-                logDir = PathAddBackslash(Path.GetFullPath(logDir));
+                InitLogDir();
                 // 2. Суффикс файла лога с расширением
-                if (string.IsNullOrEmpty(logFile)) logFile = "log.txt";
+                if (string.IsNullOrEmpty(_logFile)) _logFile = "log.txt";
 
-                return instance;
+                return _instance;
             }
         }
 
+        public void SetLogDir(string logDir) { _logDir = logDir; InitLogDir(); }
+
+        public void SetLogFileName(string logFile) { _logFile = logFile; }
+
+        public void SetMaxLogAge(int maxLogAge) { _maxLogAge = maxLogAge; }
+
+        public void SetQueueSize(int queueSize) { _queueSize = queueSize; }
+
         public void WriteToLog(string message, LogType logType)
         {
-            lock (logQueue)
+            lock (_logQueue)
             {
                 Log logEntry = new Log(message, logType);
-                logQueue.Enqueue(logEntry);
+                _logQueue.Enqueue(logEntry);
 
-                if (logQueue.Count >= queueSize || DoPeriodicFlush())
+                if (_logQueue.Count >= _queueSize || DoPeriodicFlush())
                 {
                     FlushLog();
                 }
@@ -72,11 +87,11 @@ namespace LogWriterNameSpace
 
         private void FlushLog()
         {
-            if (instance == null) return;
-            while (logQueue.Count > 0)
+            if (_instance == null) return;
+            while (_logQueue.Count > 0)
             {
-                Log entry = logQueue.Dequeue();
-                string logPath = logDir + entry.LogDate + "_" + logFile;
+                Log entry = _logQueue.Dequeue();
+                string logPath = _logDir + entry.LogDate + "_" + _logFile;
 
                 using (FileStream fs = File.Open(logPath, FileMode.Append, FileAccess.Write))
                 {
@@ -90,10 +105,10 @@ namespace LogWriterNameSpace
 
         private bool DoPeriodicFlush()
         {
-            TimeSpan logAge = DateTime.Now - LastFlushed;
-            if (logAge.TotalSeconds >= maxLogAge)
+            TimeSpan logAge = DateTime.Now - _lastFlushed;
+            if (logAge.TotalSeconds >= _maxLogAge)
             {
-                LastFlushed = DateTime.Now;
+                _lastFlushed = DateTime.Now;
                 return true;
             }
             else
@@ -138,8 +153,4 @@ namespace LogWriterNameSpace
         }
     }
 
-    public enum LogType
-    {
-        Info, Warning, Error
-    }
 }

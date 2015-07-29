@@ -50,7 +50,7 @@
             // buttonRun
             // 
             this.buttonRun.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.buttonRun.Location = new System.Drawing.Point(12, 279);
+            this.buttonRun.Location = new System.Drawing.Point(12, 338);
             this.buttonRun.Name = "buttonRun";
             this.buttonRun.Size = new System.Drawing.Size(75, 23);
             this.buttonRun.TabIndex = 0;
@@ -63,7 +63,7 @@
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripProgressBar1,
             this.toolStripStatusLabel1});
-            this.statusStrip1.Location = new System.Drawing.Point(0, 309);
+            this.statusStrip1.Location = new System.Drawing.Point(0, 368);
             this.statusStrip1.Name = "statusStrip1";
             this.statusStrip1.Size = new System.Drawing.Size(613, 22);
             this.statusStrip1.TabIndex = 1;
@@ -82,7 +82,7 @@
             // buttonClose
             // 
             this.buttonClose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.buttonClose.Location = new System.Drawing.Point(93, 279);
+            this.buttonClose.Location = new System.Drawing.Point(93, 338);
             this.buttonClose.Name = "buttonClose";
             this.buttonClose.Size = new System.Drawing.Size(75, 23);
             this.buttonClose.TabIndex = 2;
@@ -148,7 +148,7 @@
             this.listViewFiles.LargeImageList = this.imageListIcons;
             this.listViewFiles.Location = new System.Drawing.Point(12, 51);
             this.listViewFiles.Name = "listViewFiles";
-            this.listViewFiles.Size = new System.Drawing.Size(589, 222);
+            this.listViewFiles.Size = new System.Drawing.Size(589, 281);
             this.listViewFiles.SmallImageList = this.imageListIcons;
             this.listViewFiles.TabIndex = 6;
             this.listViewFiles.UseCompatibleStateImageBehavior = false;
@@ -160,11 +160,11 @@
             this.imageListIcons.ImageSize = new System.Drawing.Size(16, 16);
             this.imageListIcons.TransparentColor = System.Drawing.Color.Transparent;
             // 
-            // TestForm
+            // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(613, 331);
+            this.ClientSize = new System.Drawing.Size(613, 390);
             this.Controls.Add(this.listViewFiles);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.button1);
@@ -172,9 +172,9 @@
             this.Controls.Add(this.buttonClose);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.buttonRun);
-            this.Name = "TestForm";
+            this.Name = "MainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "MS Word files convert form";
+            this.Text = "ETL form";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.TestForm_FormClosing);
             this.Load += new System.EventHandler(this.TestForm_Load);
             this.statusStrip1.ResumeLayout(false);

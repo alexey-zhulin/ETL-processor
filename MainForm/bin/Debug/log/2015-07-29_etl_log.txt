@@ -1,0 +1,12 @@
+13:12:45.371 	[info]	=== PROCESS STARTED ===
+13:12:45.391 	[info]	Start file processing (fileName = E:\Projects\word-parser.git\trunk\Files for test\opt-3.doc)
+13:12:49.306 	[error]	message: Запрашиваемый номер семейства не существует. (row = 1; col = 5)
+13:12:49.326 	[error]	message: Запрашиваемый номер семейства не существует. (row = 1; col = 6)
+13:12:49.346 	[error]	message: Запрашиваемый номер семейства не существует. (row = 2; col = 1)
+13:12:49.376 	[error]	message: Запрашиваемый номер семейства не существует. (row = 2; col = 6)
+13:12:53.746 	[info]	Start file processing (fileName = E:\Projects\word-parser.git\trunk\Files for test\opt-4.doc)
+13:12:55.826 	[error]	message: Запрашиваемый номер семейства не существует. (row = 1; col = 4)
+13:12:55.846 	[error]	message: Запрашиваемый номер семейства не существует. (row = 1; col = 5)
+13:12:55.866 	[error]	message: Запрашиваемый номер семейства не существует. (row = 2; col = 1)
+13:12:59.474 	[info]	Start file processing (fileName = E:\Projects\word-parser.git\trunk\Files for test\pred-4.doc)
+13:13:04.123 	[info]	=== PROCESS FINISHED ===

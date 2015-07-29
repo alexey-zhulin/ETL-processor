@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.IO;
 using Word = Microsoft.Office.Interop.Word;
-using LogWriterNameSpace;
+using CommonInterfaces;
 
 namespace WordTools
 {
@@ -14,29 +14,32 @@ namespace WordTools
     {
         public String fileName;
         private ParserResult _parserResult;
-        private LogWriter _logWriter;
+        private ILogWriter _logWriter;
         public ParserResult parserResult { get { return _parserResult; } }
 
         public WordParser()
         {
             _parserResult = new ParserResult();
-            // Создадим экземпляр для логирования
-            _logWriter = LogWriter.Instance;
+        }
+
+        public void SetLogWriter(ILogWriter logWriter)
+        {
+            _logWriter = logWriter;
         }
 
         public void ParseFile()
         {
-            _logWriter.WriteToLog("Start file processing (fileName = " + fileName + ")", LogType.Info);
+            if (_logWriter != null) _logWriter.WriteToLog("Start file processing (fileName = " + fileName + ")", LogType.Info);
             // Проверим на корректность имени файла
             if (string.IsNullOrEmpty(fileName)) 
             {
-                //throw new ArgumentException("'fileName' cannot be null or empty.", "fileName");
-                _logWriter.WriteToLog("'fileName' cannot be null or empty.", LogType.Error);
+                if (_logWriter != null) _logWriter.WriteToLog("'fileName' cannot be null or empty.", LogType.Error);
+                else throw new ArgumentException("'fileName' cannot be null or empty.", "fileName");
             }
             if (!File.Exists(fileName)) 
             {
-                //throw new Exception("'" + fileName + "' does not exists");
-                _logWriter.WriteToLog("'" + fileName + "' does not exists", LogType.Error);
+                if (_logWriter != null) _logWriter.WriteToLog("'" + fileName + "' does not exists", LogType.Error);
+                else throw new Exception("'" + fileName + "' does not exists");
             }
             // Откроем файл в MS Word
             var word = new Word.Application();
@@ -69,7 +72,8 @@ namespace WordTools
                         catch (Exception e)
                         {
                             string errInfo = "message: " + e.Message + " (row = " + row +  "; col = " + col + ")";
-                            _logWriter.WriteToLog(errInfo, LogType.Error);
+                            if (_logWriter != null) _logWriter.WriteToLog(errInfo, LogType.Error);
+                            else throw new Exception(errInfo);
                         }
                     }
                     _parserResult.Table.Add(colList);
