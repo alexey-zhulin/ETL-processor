@@ -11,8 +11,9 @@ using WordTools;
 using System.IO;
 using LogWriterNameSpace;
 using CommonInterfaces;
+using LogWriterConfig;
 
-namespace TestForm
+namespace MainFormNS
 {
     public partial class MainForm : Form
     {
@@ -21,9 +22,27 @@ namespace TestForm
         private bool needToBreak;
         private List<String> filesToProcess;
 
+        // Процедура инициализации параметров логирования
+        private void InitLogParameters()
+        {
+            LogWriterConfigSection logWriterConfigSection = new LogWriterConfigSection();
+            if (logWriterConfigSection != null)
+            {
+                textBoxLogDir.Text = logWriterConfigSection.logDir;
+            }
+            SetExternalLogLibAvailable();
+        }
+        
+        // Процедура начальной инициализации значений формы
+        private void InitFormValues()
+        {
+            InitLogParameters();
+        }
+        
         public MainForm()
         {
             InitializeComponent();
+            InitFormValues();
         }
 
         private void buttonClose_Click(object sender, EventArgs e)
@@ -70,7 +89,7 @@ namespace TestForm
 
         private void backgroundWorker1_DoWork(object sender, DoWorkEventArgs e)
         {
-            LogWriter logWriter = LogWriter.Instance;
+            ILogWriter logWriter = LogWriter.Instance;
             logWriter.SetLogDir("log");
             logWriter.SetLogFileName("etl_log.txt");
             logWriter.SetMaxLogAge(10); // Сбрасывать лог будем каждые 10с
@@ -169,6 +188,33 @@ namespace TestForm
                 MessageBox.Show(er.Message, "Parsing result", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
+        }
+
+        private void SetExternalLogLibAvailable()
+        {
+            textBoxExternalLogLib.Enabled = checkBoxUseExternalLibrary.Checked;
+            buttonExternalLogLib.Enabled = checkBoxUseExternalLibrary.Checked;
+        }
+        
+        private void checkBoxUseExternalLibrary_CheckStateChanged(object sender, EventArgs e)
+        {
+            SetExternalLogLibAvailable();
+        }
+
+        private void buttonSave_Click(object sender, EventArgs e)
+        {
+            // Инициализируем конфиг для лог файла
+            LogWriterConfigSection logWriterConfigSection = new LogWriterConfigSection();
+            logWriterConfigSection.Open();
+            // Сохраним в него наши данные
+            logWriterConfigSection.logDir = textBoxLogDir.Text;
+            logWriterConfigSection.logFileName = textBoxFileName.Text;
+            logWriterConfigSection.maxLogAge = (int)numericUpDownMaxLogAge.Value;
+            logWriterConfigSection.queueSize = (int)numericUpDownQueueSize.Value;
+            if (checkBoxUseExternalLibrary.Checked) logWriterConfigSection.externalLogLib = null;
+            else logWriterConfigSection.externalLogLib = textBoxExternalLogLib.Text;
+            // Зафиксируем в файле
+            logWriterConfigSection.Save();
         }
     }
 }
