@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace CommonInterfaces
 {
-    interface EtlInterface
+    interface IEtlInterface
     {
     }
 }

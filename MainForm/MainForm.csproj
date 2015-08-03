@@ -32,8 +32,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="CommonInterfaces">
-      <HintPath>..\LogInterfaces\bin\Debug\CommonInterfaces.dll</HintPath>
+    <Reference Include="CommonInterfaces, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\CommonInterfaces\bin\Debug\CommonInterfaces.dll</HintPath>
     </Reference>
     <Reference Include="LogWriter, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
@@ -50,7 +51,8 @@
     <Reference Include="System.Drawing" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
-    <Reference Include="WordParser">
+    <Reference Include="WordParser, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
       <HintPath>..\WordParser\bin\Debug\WordParser.dll</HintPath>
     </Reference>
   </ItemGroup>

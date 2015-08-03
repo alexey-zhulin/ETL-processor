@@ -120,16 +120,16 @@ namespace MainFormNS
                                      as LogWriterConfigSection;
             if (logWriterConfigSection != null)
             {
-                logWriter.SetLogDir(logWriterConfigSection.logDir);
-                logWriter.SetLogFileName(logWriterConfigSection.logFileName);
-                logWriter.SetMaxLogAge(logWriterConfigSection.maxLogAge);
-                logWriter.SetQueueSize(logWriterConfigSection.queueSize);
+                logWriter.LogDir = logWriterConfigSection.logDir;
+                logWriter.LogFileName = logWriterConfigSection.logFileName;
+                logWriter.MaxLogAge = logWriterConfigSection.maxLogAge;
+                logWriter.QueueSize = logWriterConfigSection.queueSize;
             }
             try
             {
                 logWriter.WriteToLog("=== PROCESS STARTED ===", LogType.Info);
                 WordParser lib = new WordParser();
-                lib.SetLogWriter(logWriter);
+                lib.LogWriter = logWriter;
                 int pos = 0;
                 foreach (string fileName in filesToProcess)
                 {

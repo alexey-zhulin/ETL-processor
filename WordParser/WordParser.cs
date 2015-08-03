@@ -16,15 +16,15 @@ namespace WordTools
         private ParserResult _parserResult;
         private ILogWriter _logWriter;
         public ParserResult parserResult { get { return _parserResult; } }
+        public ILogWriter LogWriter 
+        {
+            get { return _logWriter; }
+            set { _logWriter = value; }
+        }
 
         public WordParser()
         {
             _parserResult = new ParserResult();
-        }
-
-        public void SetLogWriter(ILogWriter logWriter)
-        {
-            _logWriter = logWriter;
         }
 
         public void ParseFile()

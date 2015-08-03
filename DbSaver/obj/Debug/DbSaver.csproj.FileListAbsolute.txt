@@ -8,3 +8,8 @@ E:\Projects\word-parser.git\trunk\DbSaver\bin\Debug\DbSaver.pdb
 E:\Projects\word-parser.git\trunk\DbSaver\obj\Debug\DbSaver.csprojResolveAssemblyReference.cache
 E:\Projects\word-parser.git\trunk\DbSaver\obj\Debug\DbSaver.dll
 E:\Projects\word-parser.git\trunk\DbSaver\obj\Debug\DbSaver.pdb
+C:\Projects\ETL-processor.git\trunk\DbSaver\bin\Debug\DbSaver.dll
+C:\Projects\ETL-processor.git\trunk\DbSaver\bin\Debug\DbSaver.pdb
+C:\Projects\ETL-processor.git\trunk\DbSaver\obj\Debug\DbSaver.csprojResolveAssemblyReference.cache
+C:\Projects\ETL-processor.git\trunk\DbSaver\obj\Debug\DbSaver.dll
+C:\Projects\ETL-processor.git\trunk\DbSaver\obj\Debug\DbSaver.pdb

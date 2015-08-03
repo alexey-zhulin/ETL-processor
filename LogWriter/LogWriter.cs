@@ -41,22 +41,38 @@ namespace LogWriterNameSpace
 
         public LogWriter()
         {
-                // Параметры логирования
-                // 1. Директория с логами
-                InitLogDir();
-                // 2. Суффикс файла лога с расширением
-                if (string.IsNullOrEmpty(_logFile)) _logFile = "log.txt";
+            // Параметры логирования
+            // 1. Директория с логами
+            InitLogDir();
+            // 2. Суффикс файла лога с расширением
+            if (string.IsNullOrEmpty(_logFile)) _logFile = "log.txt";
             // Инициализируем очередь
-                _logQueue = new Queue<Log>();
+            _logQueue = new Queue<Log>();
         }
 
-        public void SetLogDir(string logDir) { _logDir = logDir; InitLogDir(); }
+        public string LogDir
+        {
+            get { return _logDir; }
+            set { _logDir = value; }
+        }
 
-        public void SetLogFileName(string logFile) { _logFile = logFile; }
+        public string LogFileName
+        {
+            get { return _logFile; }
+            set { _logFile = value; }
+        }
 
-        public void SetMaxLogAge(int maxLogAge) { _maxLogAge = maxLogAge; }
+        public int MaxLogAge
+        {
+            get { return _maxLogAge; }
+            set { _maxLogAge = value; }
+        }
 
-        public void SetQueueSize(int queueSize) { _queueSize = queueSize; }
+        public int QueueSize
+        {
+            get { return _queueSize; }
+            set { _queueSize = value; }
+        }
 
         public void WriteToLog(string message, LogType logType)
         {

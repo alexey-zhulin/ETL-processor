@@ -15,3 +15,10 @@ C:\Projects\word-parser.git\trunk\LogWriter\obj\Debug\LogWriter.dll
 C:\Projects\word-parser.git\trunk\LogWriter\obj\Debug\LogWriter.pdb
 E:\Projects\word-parser.git\trunk\LogWriter\bin\Debug\CommonInterfaces.dll
 E:\Projects\word-parser.git\trunk\LogWriter\bin\Debug\CommonInterfaces.pdb
+C:\Projects\ETL-processor.git\trunk\LogWriter\bin\Debug\LogWriter.dll
+C:\Projects\ETL-processor.git\trunk\LogWriter\bin\Debug\LogWriter.pdb
+C:\Projects\ETL-processor.git\trunk\LogWriter\bin\Debug\CommonInterfaces.dll
+C:\Projects\ETL-processor.git\trunk\LogWriter\bin\Debug\CommonInterfaces.pdb
+C:\Projects\ETL-processor.git\trunk\LogWriter\obj\Debug\LogWriter.csprojResolveAssemblyReference.cache
+C:\Projects\ETL-processor.git\trunk\LogWriter\obj\Debug\LogWriter.dll
+C:\Projects\ETL-processor.git\trunk\LogWriter\obj\Debug\LogWriter.pdb

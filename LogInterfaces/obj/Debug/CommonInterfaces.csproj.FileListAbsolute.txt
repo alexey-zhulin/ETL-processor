@@ -1,5 +1,0 @@
-E:\Projects\word-parser.git\trunk\LogInterfaces\bin\Debug\CommonInterfaces.dll
-E:\Projects\word-parser.git\trunk\LogInterfaces\bin\Debug\CommonInterfaces.pdb
-E:\Projects\word-parser.git\trunk\LogInterfaces\obj\Debug\CommonInterfaces.dll
-E:\Projects\word-parser.git\trunk\LogInterfaces\obj\Debug\CommonInterfaces.pdb
-E:\Projects\word-parser.git\trunk\LogInterfaces\obj\Debug\CommonInterfaces.csprojResolveAssemblyReference.cache

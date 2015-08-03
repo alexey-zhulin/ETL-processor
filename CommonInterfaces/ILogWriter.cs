@@ -9,13 +9,13 @@ namespace CommonInterfaces
     public interface ILogWriter
     {
         // Максимальный размер очереди лога до сброса в файл
-        void SetMaxLogAge(int maxLogAge);
+        int MaxLogAge { get; set; }
         // Максимальное время между сбросами очереди лога в файл
-        void SetQueueSize(int queueSize);
+        int QueueSize { get; set; }
         // Директория для файлов с логами
-        void SetLogDir(string logDir);
+        string LogDir { get; set; }
         // Суффикс имени файла с логами
-        void SetLogFileName(string logFile);
+        string LogFileName { get; set; }
         // Процедура создания записи в логе
         void WriteToLog(string message, LogType logType);
     }

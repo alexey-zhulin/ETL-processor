@@ -1,0 +1,10 @@
+E:\Projects\word-parser.git\trunk\LogInterfaces\bin\Debug\CommonInterfaces.dll
+E:\Projects\word-parser.git\trunk\LogInterfaces\bin\Debug\CommonInterfaces.pdb
+E:\Projects\word-parser.git\trunk\LogInterfaces\obj\Debug\CommonInterfaces.dll
+E:\Projects\word-parser.git\trunk\LogInterfaces\obj\Debug\CommonInterfaces.pdb
+E:\Projects\word-parser.git\trunk\LogInterfaces\obj\Debug\CommonInterfaces.csprojResolveAssemblyReference.cache
+C:\Projects\ETL-processor.git\trunk\CommonInterfaces\bin\Debug\CommonInterfaces.dll
+C:\Projects\ETL-processor.git\trunk\CommonInterfaces\bin\Debug\CommonInterfaces.pdb
+C:\Projects\ETL-processor.git\trunk\CommonInterfaces\obj\Debug\CommonInterfaces.csprojResolveAssemblyReference.cache
+C:\Projects\ETL-processor.git\trunk\CommonInterfaces\obj\Debug\CommonInterfaces.dll
+C:\Projects\ETL-processor.git\trunk\CommonInterfaces\obj\Debug\CommonInterfaces.pdb
