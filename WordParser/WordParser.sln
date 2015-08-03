@@ -11,7 +11,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DbSaver", "..\DbSaver\DbSav
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LogWriter", "..\LogWriter\LogWriter.csproj", "{B9369DC2-E86F-4727-A985-1CBAEE66A3BF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LogInterfaces", "..\LogInterfaces\LogInterfaces.csproj", "{56A5D231-2872-4C7C-8547-5F4A35B06A1E}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CommonInterfaces", "..\LogInterfaces\CommonInterfaces.csproj", "{56A5D231-2872-4C7C-8547-5F4A35B06A1E}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "CommonInterfaces", "CommonInterfaces", "{232218C0-BD94-417C-A356-431E1BC60E19}"
 EndProject

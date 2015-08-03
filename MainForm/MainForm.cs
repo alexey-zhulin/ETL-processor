@@ -12,6 +12,7 @@ using System.IO;
 using LogWriterNameSpace;
 using CommonInterfaces;
 using LogWriterConfig;
+using System.Configuration;
 
 namespace MainFormNS
 {
@@ -23,20 +24,42 @@ namespace MainFormNS
         private List<String> filesToProcess;
 
         // Процедура инициализации параметров логирования
-        private void InitLogParameters()
+        private void LoadLogParameters()
         {
-            LogWriterConfigSection logWriterConfigSection = new LogWriterConfigSection();
+            LogWriterConfigSection logWriterConfigSection = ConfigurationManager.GetSection("LogWriterConfigSection")
+                                     as LogWriterConfigSection;
             if (logWriterConfigSection != null)
             {
                 textBoxLogDir.Text = logWriterConfigSection.logDir;
+                textBoxFileName.Text = logWriterConfigSection.logFileName;
+                numericUpDownMaxLogAge.Value = logWriterConfigSection.maxLogAge;
+                numericUpDownQueueSize.Value = logWriterConfigSection.queueSize;
+                textBoxExternalLogLib.Text = logWriterConfigSection.externalLogLib;
             }
             SetExternalLogLibAvailable();
+        }
+
+        // Процедура сохранения параметров логирования
+        private void SaveLogParameters()
+        {
+            // Инициализируем конфиг для лог файла
+            LogWriterConfigSection logWriterConfigSection = new LogWriterConfigSection();
+            logWriterConfigSection.Open();
+            // Сохраним в него наши данные
+            logWriterConfigSection.logDir = textBoxLogDir.Text;
+            logWriterConfigSection.logFileName = textBoxFileName.Text;
+            logWriterConfigSection.maxLogAge = (int)numericUpDownMaxLogAge.Value;
+            logWriterConfigSection.queueSize = (int)numericUpDownQueueSize.Value;
+            if (checkBoxUseExternalLibrary.Checked) logWriterConfigSection.externalLogLib = null;
+            else logWriterConfigSection.externalLogLib = textBoxExternalLogLib.Text;
+            // Зафиксируем в файле
+            logWriterConfigSection.Save();
         }
         
         // Процедура начальной инициализации значений формы
         private void InitFormValues()
         {
-            InitLogParameters();
+            LoadLogParameters();
         }
         
         public MainForm()
@@ -52,6 +75,8 @@ namespace MainFormNS
 
         private void buttonRun_Click(object sender, EventArgs e)
         {
+            // Сохраним параметры логирования
+            SaveLogParameters();
             // Инициализируем переменные для запуска разбора файлов
             buttonRun.Enabled = false;
             processedWithErrors = false;
@@ -89,11 +114,17 @@ namespace MainFormNS
 
         private void backgroundWorker1_DoWork(object sender, DoWorkEventArgs e)
         {
-            ILogWriter logWriter = LogWriter.Instance;
-            logWriter.SetLogDir("log");
-            logWriter.SetLogFileName("etl_log.txt");
-            logWriter.SetMaxLogAge(10); // Сбрасывать лог будем каждые 10с
-            logWriter.SetQueueSize(1000); // Или по достижению очереди 1000 записей
+            ILogWriter logWriter = new LogWriter();
+            ConfigurationManager.RefreshSection("LogWriterConfigSection"); // перечитаем секцию из файла
+            LogWriterConfigSection logWriterConfigSection = ConfigurationManager.GetSection("LogWriterConfigSection")
+                                     as LogWriterConfigSection;
+            if (logWriterConfigSection != null)
+            {
+                logWriter.SetLogDir(logWriterConfigSection.logDir);
+                logWriter.SetLogFileName(logWriterConfigSection.logFileName);
+                logWriter.SetMaxLogAge(logWriterConfigSection.maxLogAge);
+                logWriter.SetQueueSize(logWriterConfigSection.queueSize);
+            }
             try
             {
                 logWriter.WriteToLog("=== PROCESS STARTED ===", LogType.Info);
@@ -203,18 +234,7 @@ namespace MainFormNS
 
         private void buttonSave_Click(object sender, EventArgs e)
         {
-            // Инициализируем конфиг для лог файла
-            LogWriterConfigSection logWriterConfigSection = new LogWriterConfigSection();
-            logWriterConfigSection.Open();
-            // Сохраним в него наши данные
-            logWriterConfigSection.logDir = textBoxLogDir.Text;
-            logWriterConfigSection.logFileName = textBoxFileName.Text;
-            logWriterConfigSection.maxLogAge = (int)numericUpDownMaxLogAge.Value;
-            logWriterConfigSection.queueSize = (int)numericUpDownQueueSize.Value;
-            if (checkBoxUseExternalLibrary.Checked) logWriterConfigSection.externalLogLib = null;
-            else logWriterConfigSection.externalLogLib = textBoxExternalLogLib.Text;
-            // Зафиксируем в файле
-            logWriterConfigSection.Save();
+            SaveLogParameters();
         }
     }
 }

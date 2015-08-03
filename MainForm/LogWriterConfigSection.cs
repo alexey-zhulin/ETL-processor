@@ -101,9 +101,6 @@ namespace LogWriterConfig
             Configuration config = ConfigurationManager.OpenExeConfiguration(spath);
             LogWriterConfigSection section =
                     (LogWriterConfigSection)config.Sections["LogWriterConfigSection"];
-            //
-            // TODO: Add code to copy all properties from "this" to "section"
-            //
             section.logDir = this.logDir;
             section.logFileName = this.logFileName;
             section.maxLogAge = this.maxLogAge;

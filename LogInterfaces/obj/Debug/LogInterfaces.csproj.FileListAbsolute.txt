@@ -2,8 +2,8 @@ E:\Projects\word-parser.git\trunk\Interfaces\bin\Debug\Interfaces.dll
 E:\Projects\word-parser.git\trunk\Interfaces\bin\Debug\Interfaces.pdb
 E:\Projects\word-parser.git\trunk\Interfaces\obj\Debug\Interfaces.dll
 E:\Projects\word-parser.git\trunk\Interfaces\obj\Debug\Interfaces.pdb
-E:\Projects\word-parser.git\trunk\LogInterfaces\bin\Debug\LogInterfaces.dll
 E:\Projects\word-parser.git\trunk\LogInterfaces\bin\Debug\LogInterfaces.pdb
 E:\Projects\word-parser.git\trunk\LogInterfaces\obj\Debug\LogInterfaces.csprojResolveAssemblyReference.cache
 E:\Projects\word-parser.git\trunk\LogInterfaces\obj\Debug\LogInterfaces.dll
 E:\Projects\word-parser.git\trunk\LogInterfaces\obj\Debug\LogInterfaces.pdb
+E:\Projects\word-parser.git\trunk\LogInterfaces\bin\Debug\LogInterfaces.dll

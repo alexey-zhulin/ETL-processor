@@ -21,7 +21,7 @@ E:\Projects\word-parser.git\trunk\MainForm\bin\Debug\LogWriter.pdb
 E:\Projects\word-parser.git\trunk\MainForm\bin\Debug\WordParser.pdb
 E:\Projects\word-parser.git\trunk\MainForm\obj\Debug\MainForm.csprojResolveAssemblyReference.cache
 E:\Projects\word-parser.git\trunk\MainForm\obj\Debug\MainForm.csproj.GenerateResource.Cache
-E:\Projects\word-parser.git\trunk\MainForm\bin\Debug\LogInterfaces.dll
-E:\Projects\word-parser.git\trunk\MainForm\bin\Debug\LogInterfaces.pdb
 E:\Projects\word-parser.git\trunk\MainForm\obj\Debug\MainFormNS.MainForm.resources
 E:\Projects\word-parser.git\trunk\MainForm\obj\Debug\MainFormNS.Properties.Resources.resources
+E:\Projects\word-parser.git\trunk\MainForm\bin\Debug\CommonInterfaces.dll
+E:\Projects\word-parser.git\trunk\MainForm\bin\Debug\CommonInterfaces.pdb

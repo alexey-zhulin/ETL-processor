@@ -3,8 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-//using System.Configuration;
-//using System.Collections.Specialized;
 using System.IO;
 using CommonInterfaces;
 
@@ -12,15 +10,12 @@ namespace LogWriterNameSpace
 {
     public class LogWriter : ILogWriter
     {
-        private static LogWriter _instance;
         private static Queue<Log> _logQueue;
         private static string _logDir;
         private static string _logFile;
         private static int _maxLogAge = 0;
         private static int _queueSize = 0;
         private static DateTime _lastFlushed = DateTime.Now;
-
-        private LogWriter() { }
 
         private static string PathAddBackslash(string path)
         {
@@ -44,23 +39,15 @@ namespace LogWriterNameSpace
             _logDir = PathAddBackslash(Path.GetFullPath(_logDir));
         }
 
-        public static LogWriter Instance
+        public LogWriter()
         {
-            get
-            {
-                if (_instance == null)
-                {
-                    _instance = new LogWriter();
-                    _logQueue = new Queue<Log>();
-                }
                 // Параметры логирования
                 // 1. Директория с логами
                 InitLogDir();
                 // 2. Суффикс файла лога с расширением
                 if (string.IsNullOrEmpty(_logFile)) _logFile = "log.txt";
-
-                return _instance;
-            }
+            // Инициализируем очередь
+                _logQueue = new Queue<Log>();
         }
 
         public void SetLogDir(string logDir) { _logDir = logDir; InitLogDir(); }
@@ -87,7 +74,6 @@ namespace LogWriterNameSpace
 
         private void FlushLog()
         {
-            if (_instance == null) return;
             while (_logQueue.Count > 0)
             {
                 Log entry = _logQueue.Dequeue();

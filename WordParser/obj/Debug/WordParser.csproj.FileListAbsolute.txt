@@ -12,5 +12,5 @@ C:\Projects\word-parser.git\trunk\WordParser\obj\Debug\WordParser.dll
 C:\Projects\word-parser.git\trunk\WordParser\obj\Debug\WordParser.pdb
 C:\Projects\word-parser.git\trunk\WordParser\bin\Debug\LogWriter.dll
 C:\Projects\word-parser.git\trunk\WordParser\bin\Debug\LogWriter.pdb
-E:\Projects\word-parser.git\trunk\WordParser\bin\Debug\LogInterfaces.dll
-E:\Projects\word-parser.git\trunk\WordParser\bin\Debug\LogInterfaces.pdb
+E:\Projects\word-parser.git\trunk\WordParser\bin\Debug\CommonInterfaces.dll
+E:\Projects\word-parser.git\trunk\WordParser\bin\Debug\CommonInterfaces.pdb

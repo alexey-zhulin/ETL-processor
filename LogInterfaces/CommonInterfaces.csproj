@@ -7,8 +7,8 @@
     <ProjectGuid>{56A5D231-2872-4C7C-8547-5F4A35B06A1E}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>LogInterfaces</RootNamespace>
-    <AssemblyName>LogInterfaces</AssemblyName>
+    <RootNamespace>CommonInterfaces</RootNamespace>
+    <AssemblyName>CommonInterfaces</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -39,6 +39,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="EtlInterface.cs" />
     <Compile Include="ILogWriter.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
