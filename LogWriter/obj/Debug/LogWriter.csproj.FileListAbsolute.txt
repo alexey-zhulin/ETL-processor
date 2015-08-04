@@ -22,3 +22,10 @@ C:\Projects\ETL-processor.git\trunk\LogWriter\bin\Debug\CommonInterfaces.pdb
 C:\Projects\ETL-processor.git\trunk\LogWriter\obj\Debug\LogWriter.csprojResolveAssemblyReference.cache
 C:\Projects\ETL-processor.git\trunk\LogWriter\obj\Debug\LogWriter.dll
 C:\Projects\ETL-processor.git\trunk\LogWriter\obj\Debug\LogWriter.pdb
+E:\Projects\ETL-processor.git\trunk\LogWriter\bin\Debug\LogWriter.dll
+E:\Projects\ETL-processor.git\trunk\LogWriter\bin\Debug\LogWriter.pdb
+E:\Projects\ETL-processor.git\trunk\LogWriter\bin\Debug\CommonInterfaces.dll
+E:\Projects\ETL-processor.git\trunk\LogWriter\bin\Debug\CommonInterfaces.pdb
+E:\Projects\ETL-processor.git\trunk\LogWriter\obj\Debug\LogWriter.csprojResolveAssemblyReference.cache
+E:\Projects\ETL-processor.git\trunk\LogWriter\obj\Debug\LogWriter.dll
+E:\Projects\ETL-processor.git\trunk\LogWriter\obj\Debug\LogWriter.pdb

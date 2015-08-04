@@ -21,7 +21,8 @@ namespace MainFormNS
         private bool processedWithErrors;
         private string errorMessage;
         private bool needToBreak;
-        private List<String> filesToProcess;
+        private List<String> filesToProcess = new List<string>();
+        private ILogWriter logWriter = new LogWriter();
 
         // Процедура инициализации параметров логирования
         private void LoadLogParameters()
@@ -54,6 +55,11 @@ namespace MainFormNS
             else logWriterConfigSection.externalLogLib = textBoxExternalLogLib.Text;
             // Зафиксируем в файле
             logWriterConfigSection.Save();
+            // Обновим параметры у нашего logWriter-а
+            logWriter.LogDir = textBoxLogDir.Text;
+            logWriter.LogFileName = textBoxFileName.Text;
+            logWriter.MaxLogAge = (int)numericUpDownMaxLogAge.Value;
+            logWriter.QueueSize = (int)numericUpDownQueueSize.Value;
         }
         
         // Процедура начальной инициализации значений формы
@@ -84,7 +90,6 @@ namespace MainFormNS
             needToBreak = false;
             try
             {
-                filesToProcess = new List<string>();
                 foreach (ListViewItem currentItem in listViewFiles.Items)
                 {
                     if (currentItem.Checked) filesToProcess.Add((string)currentItem.Tag);
@@ -114,17 +119,6 @@ namespace MainFormNS
 
         private void backgroundWorker1_DoWork(object sender, DoWorkEventArgs e)
         {
-            ILogWriter logWriter = new LogWriter();
-            ConfigurationManager.RefreshSection("LogWriterConfigSection"); // перечитаем секцию из файла
-            LogWriterConfigSection logWriterConfigSection = ConfigurationManager.GetSection("LogWriterConfigSection")
-                                     as LogWriterConfigSection;
-            if (logWriterConfigSection != null)
-            {
-                logWriter.LogDir = logWriterConfigSection.logDir;
-                logWriter.LogFileName = logWriterConfigSection.logFileName;
-                logWriter.MaxLogAge = logWriterConfigSection.maxLogAge;
-                logWriter.QueueSize = logWriterConfigSection.queueSize;
-            }
             try
             {
                 logWriter.WriteToLog("=== PROCESS STARTED ===", LogType.Info);

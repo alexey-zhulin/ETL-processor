@@ -16,6 +16,7 @@ namespace CommonInterfaces
         string LogDir { get; set; }
         // Суффикс имени файла с логами
         string LogFileName { get; set; }
+        
         // Процедура создания записи в логе
         void WriteToLog(string message, LogType logType);
     }

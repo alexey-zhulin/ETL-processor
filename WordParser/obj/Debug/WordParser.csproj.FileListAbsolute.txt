@@ -21,3 +21,10 @@ C:\Projects\ETL-processor.git\trunk\WordParser\obj\Debug\WordParser.csprojResolv
 C:\Projects\ETL-processor.git\trunk\WordParser\obj\Debug\WordParser.csproj.ResolveComReference.cache
 C:\Projects\ETL-processor.git\trunk\WordParser\obj\Debug\WordParser.dll
 C:\Projects\ETL-processor.git\trunk\WordParser\obj\Debug\WordParser.pdb
+E:\Projects\ETL-processor.git\trunk\WordParser\bin\Debug\WordParser.dll
+E:\Projects\ETL-processor.git\trunk\WordParser\bin\Debug\WordParser.pdb
+E:\Projects\ETL-processor.git\trunk\WordParser\bin\Debug\CommonInterfaces.pdb
+E:\Projects\ETL-processor.git\trunk\WordParser\obj\Debug\WordParser.csprojResolveAssemblyReference.cache
+E:\Projects\ETL-processor.git\trunk\WordParser\obj\Debug\WordParser.csproj.ResolveComReference.cache
+E:\Projects\ETL-processor.git\trunk\WordParser\obj\Debug\WordParser.dll
+E:\Projects\ETL-processor.git\trunk\WordParser\obj\Debug\WordParser.pdb
