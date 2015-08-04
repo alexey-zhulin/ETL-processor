@@ -1,2 +1,2 @@
-# word-parser
-Parser for tables in MS Word files
+# ETL-processor
+This project aimed to create framework for ETL (Extract-Transform-Load) procedures.
