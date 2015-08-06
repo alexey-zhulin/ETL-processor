@@ -28,3 +28,4 @@ E:\Projects\ETL-processor.git\trunk\WordParser\obj\Debug\WordParser.csprojResolv
 E:\Projects\ETL-processor.git\trunk\WordParser\obj\Debug\WordParser.csproj.ResolveComReference.cache
 E:\Projects\ETL-processor.git\trunk\WordParser\obj\Debug\WordParser.dll
 E:\Projects\ETL-processor.git\trunk\WordParser\obj\Debug\WordParser.pdb
+E:\Projects\ETL-processor.git\trunk\WordParser\bin\Debug\CommonInterfaces.dll

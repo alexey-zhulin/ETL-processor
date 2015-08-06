@@ -10,17 +10,39 @@ using CommonInterfaces;
 namespace WordTools
 {
     // Класс библиотеки парсера Word файла
-    public class WordParser
+    public class WordParser : IEtlModuleFile
     {
-        public String fileName;
-        private ParserResult _parserResult;
-        private ILogWriter _logWriter;
-        public ParserResult parserResult { get { return _parserResult; } }
-        public ILogWriter LogWriter 
+        #region Properties from IEtlModuleFile
+        public List<object> InputData { get; set; }
+        public List<object> OutputData { get; set; }
+        public string Name { get; set; }
+        public int Order { get; set; }
+        public string FileMask { get; set; }
+        public bool UseSubdirectories { get; set; }
+        public string BaseDirectory { get; set; }
+        public ILogWriter LogWriter
         {
             get { return _logWriter; }
             set { _logWriter = value; }
         }
+        #endregion
+
+        #region Methods from IEtlModuleFile
+        public void Run()
+        {
+
+        }
+        public List<object> GetUnfilteredInputData()
+        {
+            List<object> fileList = new List<object>();
+            return fileList;
+        }
+        #endregion
+
+        public String fileName;
+        private ParserResult _parserResult;
+        private ILogWriter _logWriter;
+        public ParserResult parserResult { get { return _parserResult; } }
 
         public WordParser()
         {
